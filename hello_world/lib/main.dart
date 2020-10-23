@@ -1,38 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyWidget(title: 'Demo App', message: 'Hello'));
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MyWidget extends StatelessWidget {
+  final String title;
+  final String message;
+
+  const MyWidget({
+    Key key,
+    @required this.title,
+    @required this.message,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hello World Demo Application',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Home page'),
-    );
-  }
-}
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(this.title,
-        style: GoogleFonts.pacifico(),
+      title: 'Flutter Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-      ),
-      body: Center(
-          child:
-          Text(
-            'Hello World',
-          )
+        body: Center(
+          child: Text(message, style: GoogleFonts.pacifico()),
+        ),
       ),
     );
   }
