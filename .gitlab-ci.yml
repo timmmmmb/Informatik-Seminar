@@ -1,3 +1,4 @@
+image: cirrusci/flutter:stable
 stages:
   - test # All jobs related for testing such as Unit Test
   - build # All jobs related for building app for iOS and Android
