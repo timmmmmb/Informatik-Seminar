@@ -77,7 +77,7 @@ class AnimatedLogo extends AnimatedWidget {
   @override
   Widget build(BuildContext context) {
     final Tween _opacityTween = Tween<double>(begin: 0, end: 1);
-    final Tween _sizeTween = Tween<double>(begin: 0, end: 125);
+    final Tween _sizeTween = Tween<double>(begin: 0, end: 100);
     final ColorTween _colorTween = ColorTween(begin: begin, end: end);
     final animation = listenable as Animation<double>;
     return
@@ -94,7 +94,7 @@ class AnimatedLogo extends AnimatedWidget {
               ),
               Center(
                   child: Container(
-                    margin: EdgeInsets.symmetric(vertical:(125-_sizeTween.evaluate(animation))/2,),
+                    margin: EdgeInsets.symmetric(vertical:(100-_sizeTween.evaluate(animation))/2,),
                     height: _sizeTween.evaluate(animation),
                     width: _sizeTween.evaluate(animation),
                     child: FlutterLogo(),

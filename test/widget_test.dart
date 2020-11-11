@@ -14,7 +14,7 @@ void main() {
   // to work with. The WidgetTester allows building and interacting
   // with widgets in the test environment.
   testWidgets('Codelab smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(new LogoApp());
+    await tester.pumpWidget(MaterialApp(home: LogoApp(), title: "Flutter Animation Demo"));
     expect(find.byType(FlutterLogo), findsWidgets);
   });
 
